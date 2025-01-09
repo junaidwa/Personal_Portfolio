@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .main{
-    width: 100%;
+    max-width: 100%;
     
 }
 
@@ -62,6 +62,7 @@
 .HomePage .left .btns{
  margin-right: 300px;
  margin-top: 40px;
+ border: 2px solid red;
     
 }
 .HomePage .left .btns button{
@@ -117,6 +118,35 @@
     }
      
  }
+ @media screen and (max-width: 1024px ){
+    .main .HomePage .right .image{
+        margin-top: 100px;
+        margin-left: 300px;
+    }
+    .main .HomePage .right .image img{
+        height: 420px;
+        width: 350px;
+      
+       } 
+       .main .HomePage .left{
+        width: 500px;
+       
+       }
+       .main .HomePage .left h1{
+        font-size: 30px;
+    
+       }
+       .main .HomePage .left p{
+        padding: 0 20px;
+        margin-top: 2px;
+        margin-bottom: 50px;
+       }
+       .main .HomePage .left .btns{
+        /* border: 2px solid green; */
+       margin: 0;
+       }
+
+ }
  
  @media screen and (max-width: 700px) {
      .main .navbar .midnav,.rightnav{
@@ -124,7 +154,7 @@
          visibility: hidden;
      }
      .main .navbar .DayNight{
-         margin-right: 200px;
+         margin-right: 100px;
      }
      .closeNav{
          border: 2px solid black;
