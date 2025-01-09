@@ -27,3 +27,75 @@
 .main .navbar .midnav ul li{
     margin-left: 60px;
 }
+
+
+
+
+
+
+@media screen and (min-width: 700px) {
+  
+   .navbar .open{
+    display: none;
+    visibility: hidden;
+   }
+   .closeNav{
+    display: none;
+    visibility: hidden;
+   }
+    
+}
+
+@media screen and (max-width: 700px) {
+    .main .navbar .midnav,.rightnav{
+        display: none;
+        visibility: hidden;
+    }
+    .main .navbar .DayNight{
+        margin-right: 200px;
+    }
+    .closeNav{
+        border: 2px solid black;
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        position: absolute;
+        right: 0;
+        top: 0;
+        /* display: none;
+        visibility: hidden; */
+        background-color: red;
+    }
+    .closeNav .close{
+     position: absolute;
+     top: 3%;
+     left: 5%;
+    }
+    .closeNav .midclosenav ul{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        align-items: center;
+        margin-top: 100px;
+    
+    
+    }
+    .closeNav .midclosenav ul li{
+        margin-top: 50px;
+    }
+    .closeNav .bottomnav{
+        margin-top: 50px;
+        margin-left: 35%;
+    }
+    .hide{
+        /* transform: translateX(0%); */
+       display: none;
+        visibility: hidden;
+    }
+   
+
+    
+}
