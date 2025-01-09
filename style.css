@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.main{
+    width: 100%;
+    
+}
+
+.main .navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 21px 30px;
+
+}
+
+.main .navbar .midnav {
+    padding: 10px;
+    margin-left: 190px;
+}
+.main .navbar .midnav ul{
+    display: flex;
+    list-style-type: none;
+    text-decoration: none;
+}
+.main .navbar .midnav ul li{
+    margin-left: 60px;
+}
