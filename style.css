@@ -60,14 +60,21 @@
     padding: 5px 70px;
 }
 .HomePage .left .btns{
- margin-right: 300px;
+ /* margin-right: 300px; */
+ margin-left: -90px;
  margin-top: 40px;
  border: 2px solid red;
     
 }
 .HomePage .left .btns button{
+    padding: 20px 15px;
+    font-size: 20px;
+}
+.HomePage .left .btns span{
     margin-left: 20px;
     padding: 10px;
+    font-size: 30px;
+    padding: 80px 20px;
 }
 .HomePage .right .image{
     /* border: 2px solid green; */
@@ -118,35 +125,6 @@
     }
      
  }
- @media screen and (max-width: 1024px ){
-    .main .HomePage .right .image{
-        margin-top: 100px;
-        margin-left: 300px;
-    }
-    .main .HomePage .right .image img{
-        height: 420px;
-        width: 350px;
-      
-       } 
-       .main .HomePage .left{
-        width: 500px;
-       
-       }
-       .main .HomePage .left h1{
-        font-size: 30px;
-    
-       }
-       .main .HomePage .left p{
-        padding: 0 20px;
-        margin-top: 2px;
-        margin-bottom: 50px;
-       }
-       .main .HomePage .left .btns{
-        /* border: 2px solid green; */
-       margin: 0;
-       }
-
- }
  
  @media screen and (max-width: 700px) {
      .main .navbar .midnav,.rightnav{
@@ -166,10 +144,10 @@
          position: absolute;
          right: 0;
          top: 0;
-         /* display: none;
-         visibility: hidden; */
+        transform: translateX(0%);
          background-color: red;
          z-index: 2;
+         transition: all 0.3s linear;
      }
      .closeNav .close{
       position: absolute;
@@ -194,9 +172,7 @@
          margin-left: 35%;
      }
      .hide{
-         /* transform: translateX(0%); */
-        display: none;
-         visibility: hidden;
+         transform: translateX(100%);
      }
     
    .main .HomePage{
@@ -241,9 +217,107 @@
     margin-bottom: 50px;
    }
    .main .HomePage .left .btns{
+    margin-left: 15px;
+   }
+   .main .HomePage .left .btns span{
     /* border: 2px solid green; */
    margin: 0;
+   font-size: 25px;
    }
  
      
  }
+ @media  (min-width: 700px) and (max-width:1250px) {
+    .main .navbar .midnav{
+        margin-left: 50px;
+    }
+    .main .navbar .midnav ul li{
+        margin: 0px 30px;
+    }
+    .main .HomePage {
+        height: 500px;
+        width: 100%;
+    }
+    .main .HomePage .left{
+        /* border: 2px solid green; */
+        width: 60%;
+
+    }
+    .main .HomePage .right .image{
+        /* border: 2px solid purple; */
+        padding-left: 0px;
+        margin-left: 70px;
+    }
+    .main .HomePage .left h1{
+        font-size: 40px;
+    }
+    .main .HomePage .left p{
+        padding: 10px 30px;
+    }
+    .main .HomePage .right{
+        /* border: 2px solid red; */
+       width: 500px;
+       height: 500px;
+
+    }
+    .main .HomePage .right img{
+        /* border: 2px solid pink; */
+       height: 400px;
+       width: 350px;
+       margin-right: 100px;
+       margin-left: 0px;   
+    }
+    .main .HomePage .left .btns {
+        margin-left: 13px;
+    }
+    .main .HomePage .left .btns span{
+        padding: 0;
+        
+    }
+    .main .HomePage .left .btns span i{
+        font-size: 20px;
+    }
+    .main .HomePage .left .btns button{
+        padding: 10px ;
+    }
+
+  }
+  @media  (min-width: 700px) and (max-width:900px) {
+    .main .navbar .midnav{
+        margin-left: -30px;
+    }
+    .main .navbar .midnav ul li{
+        margin: 0px 10px;
+    }
+    .main .HomePage .right .image{
+        /* border: 2px solid purple; */
+        padding-left: 0px;
+        margin-left: 30px;
+    }
+    .main .HomePage .right .image img{
+        height: 400px;
+        width: 300px;
+        /* border: 2px solid pink; */
+      
+    }
+    .main .HomePage  .left h1{
+        font-size: 30px;
+    }
+    .main .HomePage  .left .btns {
+        margin-left: 10px;
+    }
+    .main .HomePage .right{
+        width: 50%;
+    
+    }
+    .main .HomePage .left .btns span i{
+        font-size: 15px;
+    }
+    .main .HomePage .left p{
+        padding: 10px 20px;
+    }
+   
+
+
+
+  }
