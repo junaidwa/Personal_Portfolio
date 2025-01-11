@@ -85,3 +85,14 @@ themeToggle.addEventListener('click', function() {
                 });
             }
         });
+
+
+        //Skill section css
+        document.querySelectorAll('.skill-container').forEach(container => {
+            const percentage = container.getAttribute('data-skill');
+            const circle = container.querySelector('.circle');
+            const percentageText = container.querySelector('.percentage');
+
+            circle.style.setProperty('--percentage', `${percentage}%`);
+            percentageText.textContent = `${percentage}%`;
+        });

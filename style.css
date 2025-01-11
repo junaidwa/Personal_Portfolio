@@ -12,7 +12,7 @@
 .main .navbar{
     display: flex;
     justify-content: space-between;
-    padding: 21px 30px;
+    padding: 21px 60px;
 
 }
 
@@ -104,11 +104,13 @@
 .controls{
     /* background-color: blue; */
     color: black;
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     height: 300px;
-    padding: 0 50px;
+    padding: 0 90px;
     margin-top: 100px;
     /* border: 2px solid green; */
 }
@@ -119,6 +121,81 @@
   margin-left: 65px;
 }
 
+/* Skill Section css */
+.skills{
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    gap: 10px;
+    max-width: 100%;
+    padding: 10px 50px;
+}
+.skill-container {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 20px;
+    /* border: 2px solid gray; */
+    margin: 0;
+}
+
+.skill-container span i {
+    font-size: 40px;
+    color: black;
+    transition: opacity 0.3s;
+}
+
+.circle {
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: 1px solid transparent;
+    background-image: conic-gradient(
+        green 0%,
+        green var(--percentage, 0%),
+        lightgray var(--percentage, 0%)
+    );
+    background-origin: border-box;
+    background-clip: border-box;
+    opacity: 0;
+    transition: opacity 0.3s, background 0.5s;
+}
+
+.inner-circle {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle span {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+.skill-container:hover .circle {
+    opacity: 1;
+}
+
+.skill-container:hover span i {
+    opacity: 0;
+}
 
 
 
@@ -146,17 +223,33 @@
  }
  
  @media screen and (max-width: 700px) {
+    .skills{
+        border: 2px solid black;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
+        gap: 10px;
+        max-width: 100%;
+        padding: 10px 50px;
+
+    }
     .controls{
         max-width: 500px;
         height: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        border: 2px solid yellow;
+        margin:  0 auto;
     }
+    .controls .third,.fourth{
+        margin-left: 95px;
+      }
     .controls .control{
         margin-top: 20px;
         /* border: 2px solid red; */
     }
+   .controls .thirdheading ,.fourthheading{
+    margin-left: 45px;
+   }
     
      .main .navbar .midnav,.rightnav{
          display: none;
@@ -259,10 +352,22 @@
      
  }
  @media  (min-width: 700px) and (max-width:1250px) {
+    .skills{
+        border: 2px solid black;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        max-width: 100%;
+        padding: 10px 50px;
+
+    }
     .controls{
         max-width: 1500px;
         height: 400px;
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+        border: 2px solid purple;
      
     }
     .controls .control{
@@ -325,12 +430,23 @@
 
   }
   @media  (min-width: 700px) and (max-width:900px) {
+    .skills{
+        border: 2px solid black;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr ;
+        gap: 10px;
+        max-width: 100%;
+        padding: 10px 50px;
+
+    }
     .controls{
         max-width: 800px;
         height: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+       border: 2px solid navy;
+       margin: 0 auto;
+
     }
     .controls .control{
         margin-top: 20px;
