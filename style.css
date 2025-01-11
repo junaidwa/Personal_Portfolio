@@ -8,6 +8,7 @@
     
 }
 
+
 .main .navbar{
     display: flex;
     justify-content: space-between;
@@ -81,6 +82,7 @@
     margin-top: 45px;
     margin-left: 150px;
     overflow: hidden;
+    border-radius: 20px;
 }
 .HomePage .right .image img{
     height: 500px;
@@ -98,7 +100,24 @@
    transform: scale(1.1);
    filter: grayscale(0);
 }
-
+/* Counter CSS */
+.controls{
+    /* background-color: blue; */
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+    padding: 0 50px;
+    margin-top: 100px;
+    /* border: 2px solid green; */
+}
+.controls .fir,.sec{
+  margin-left: 95px;
+}
+.controls .third,.fourth{
+  margin-left: 65px;
+}
 
 
 
@@ -127,6 +146,18 @@
  }
  
  @media screen and (max-width: 700px) {
+    .controls{
+        max-width: 500px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .controls .control{
+        margin-top: 20px;
+        /* border: 2px solid red; */
+    }
+    
      .main .navbar .midnav,.rightnav{
          display: none;
          visibility: hidden;
@@ -228,6 +259,17 @@
      
  }
  @media  (min-width: 700px) and (max-width:1250px) {
+    .controls{
+        max-width: 1500px;
+        height: 400px;
+        display: flex;
+     
+    }
+    .controls .control{
+        margin-top: 20px;
+        /* border: 2px solid red; */
+    }
+    
     .main .navbar .midnav{
         margin-left: 50px;
     }
@@ -283,6 +325,18 @@
 
   }
   @media  (min-width: 700px) and (max-width:900px) {
+    .controls{
+        max-width: 800px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .controls .control{
+        margin-top: 20px;
+        /* border: 2px solid red; */
+    }
+    
     .main .navbar .midnav{
         margin-left: -30px;
     }
