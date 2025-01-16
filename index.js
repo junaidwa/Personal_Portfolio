@@ -3,6 +3,7 @@ var OpenBtn = document.querySelector(".open");
 var Closebtn = document.querySelector(".close");
 var MainBody = document.querySelector(".main");
 
+
 let counters = document.querySelectorAll(".controls span");
         let container = document.querySelector(".controls");
 
@@ -62,29 +63,36 @@ themeToggle.addEventListener('click', function() {
 
 //Counter JavaScript
 
-        window.addEventListener("scroll", () => {
-            let containerTop = container.offsetTop;
-            let containerHeight = container.offsetHeight;
-            let scrollPosition = window.pageYOffset;
+        let hasAnimated = false; // Flag to track if the animation has been triggered
 
-            if (scrollPosition > containerTop - window.innerHeight + 200 || scrollPosition < containerTop - window.innerHeight + 200) {
-                counters.forEach(counter => {
-                    counter.innerText = 0;
-                    let count = 0;
-                    function updateCount() {
-                        const target = parseInt(counter.dataset.count);
-                        if (count < target) {
-                            count++;
-                            counter.innerText = count;
-                            setTimeout(updateCount, 10);
-                        } else {
-                            counter.innerText = target;
-                        }
-                    }
-                    updateCount();
-                });
+window.addEventListener("scroll", () => {
+    let containerTop = container.offsetTop;
+    let containerHeight = container.offsetHeight;
+    let scrollPosition = window.pageYOffset;
+
+    // Check if the container is in view and the animation hasn't run yet
+    if (scrollPosition > containerTop - window.innerHeight + 200 && !hasAnimated) {
+        hasAnimated = true; // Set the flag to true to prevent re-triggering
+
+        counters.forEach(counter => {
+            counter.innerText = 0;
+            let count = 0;
+
+            function updateCount() {
+                const target = parseInt(counter.dataset.count);
+                if (count < target) {
+                    count++;
+                    counter.innerText = count;
+                    setTimeout(updateCount, 10);
+                } else {
+                    counter.innerText = target;
+                }
             }
+
+            updateCount();
         });
+    }
+});
 
 
         //Skill section css
@@ -96,3 +104,27 @@ themeToggle.addEventListener('click', function() {
             circle.style.setProperty('--percentage', `${percentage}%`);
             percentageText.textContent = `${percentage}%`;
         });
+
+
+
+
+
+
+
+
+/////////////Scroll behaviour//////////////////////
+
+
+        document.querySelectorAll('.nav-links').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent default anchor click behavior
+        
+                const id = this.getAttribute('href'); // Get the target section's ID
+                const targetSection = document.querySelector(id); // Select the target section
+        
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly to the section
+                }
+            });
+        });
+        
