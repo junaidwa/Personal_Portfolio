@@ -2,6 +2,40 @@ var CloseNav = document.querySelector(".closeNav");
 var OpenBtn = document.querySelector(".open");
 var Closebtn = document.querySelector(".close");
 var MainBody = document.querySelector(".main");
+var Nav_link= document.querySelectorAll(".closeNav .midclosenav .nav-links");
+// Select all navigation links
+var navLinks = document.querySelectorAll(".closeNav .midclosenav .nav-links");
+
+// Loop through each link and add a click event listener
+navLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        // Call the function to close the navigation menu
+        closeNavigation();
+        // Prevent the click event from propagating further
+        event.stopPropagation();
+    });
+});
+
+//Progress  bar Functionality
+document.querySelector('.Progressbar').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Enables smooth scrolling
+    });
+});
+let ATScroolPrgress=()=>{
+    let ProgressDIV= document.querySelector('.Progressbar');
+    let ProgessSpan= document.querySelector('.ProgressCircle');
+    let pos = document.documentElement.scrollTop;
+    let CalHeight= document.documentElement.scrollHeight- document.documentElement.clientHeight;
+    let ScrollValue= Math.round(pos*100/CalHeight);
+    ProgressDIV.style.background=`conic-gradient( #c0c0ff ${ScrollValue}%rgb(22, 22, 110) ${ScrollValue}%)`;
+    ProgessSpan.textContent=`${ScrollValue}%`
+
+}
+window.onscroll=ATScroolPrgress;
+window.onload=ATScroolPrgress;
+
 
 
 let counters = document.querySelectorAll(".controls span");
@@ -17,6 +51,7 @@ Closebtn.addEventListener('click', function(event) {
     closeNavigation();
     event.stopPropagation(); // Prevent click from propagating to MainBody
 });
+
 
 // Event listener for the open button
 OpenBtn.addEventListener('click', function(event) {
@@ -34,6 +69,7 @@ MainBody.addEventListener('click', function(event) {
         }
     }
 });
+
 
 // Optional: Prevent clicks inside the CloseNav from closing it
 CloseNav.addEventListener('click', function(event) {
