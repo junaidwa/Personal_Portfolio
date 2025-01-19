@@ -271,9 +271,30 @@
     </div>
    
     <div class="Contacts" id="Section-5">
-        <div class="title">
-            <h2 class="Contacts-title">Contacts</h2>
-        </div>
+      
+            <div class="left">
+                <h2 class="Contacts-title">Contacts.</h2>
+                <p class="Message">
+
+                    I would love to hear about your project and how I could help. Please fill in the form, and I'll get back to you as soon as possible.
+                </p>
+            </div>
+            <div class="right">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <input type="hidden" name="access_key" value="0b896576-3e60-49d1-9080-2010ccb71f3b">
+                    <!-- <h4>Name</h4> -->
+                    <input type="text" id="name" name="name"  class="inputs-contact" placeholder="Enter Name" required>
+                    <!-- <h4>Gmail</h4> -->
+
+                    <input type="text"  id="gmail" name="gmail" class="inputs-contact" placeholder="Enter Gmail" required>
+                    <!-- <h4>Message</h4> -->
+
+                   <input type="text"  id="message"  name="message" placeholder="Enter Message" required><br>
+                       <button type="submit">Send Message</button>
+        
+                </form>
+            </div>
+      
         
     </div>
 

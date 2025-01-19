@@ -115,6 +115,8 @@ transition: 0.5s;
 
 
 }
+/* //Contact CSS */
+
 
 
 
@@ -294,15 +296,62 @@ transition: 0.5s;
     margin-left: 50%;
  
 }
-.Contacts-title{
-    margin-left: 50%;
-
-
-}
 .main .Contacts{
     width: 100%;
     height: 90vh;
-    border: 2px solid brown;
+    border: 2px solid green;
+    display: flex;
+}
+.Contacts .left{
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 120px;
+  
+}
+.Contacts .left h2{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.Contacts .left p{
+    font-size: 20px;
+}
+.Contacts .right{
+    border: 2px solid purple;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Contacts .right input{
+    width: 80%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    margin-top: 50px;
+    padding: 20px 10px;
+}
+.Contacts .right input::placeholder{
+    color: rebeccapurple;
+      font-size: 18px;
+}
+.Contacts .right .contact-form button{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    margin-top: 30px;
+    margin-left: 50%; 
+    font-size: 25px;
+    cursor: pointer;
+
+}
+
+/* .Contacts .right h4{
+    margin-top: 20px;
+} */
+.Contacts .left,.right{
+    width: 50%;
 }
 
 
