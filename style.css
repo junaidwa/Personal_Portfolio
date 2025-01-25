@@ -2,6 +2,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+  
+}
+body{
+    padding: 0 10px;
 }
 .main{
     max-width: 100%;
@@ -88,7 +92,7 @@ transition: 0.5s;
     border: 2px solid pink;
 }
 /* //Progress Bar Functionality */
-.Progressbar{
+/* .Progressbar{
     position: fixed;
     bottom: 5%;
     right: 3%;
@@ -114,9 +118,53 @@ transition: 0.5s;
     font-size: 12px;
 
 
-}
-/* //Contact CSS */
+} */
 
+
+.Progressbar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #f5f5ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .ProgressCircle {
+    font-size: 16px;
+    font-weight: bold;
+    color: #16166e;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    /* background: #fff; */
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+  }
+  
+  .ProgressCircle::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* background: conic-gradient(gray 0%, gray 100%); */
+    z-index: -1;
+    /* mask: radial-gradient(circle, transparent 60%, #000 61%);
+    -webkit-mask: radial-gradient(circle, transparent 60%, #000 61%); */
+  }
+  
+/* //Contact CSS */
 
 
 
@@ -154,7 +202,7 @@ transition: 0.5s;
  margin-left: -90px;
  margin-top: 40px;
  border: 2px solid red;
-    
+ 
 }
 .HomePage .left .btns button{
     padding: 20px 15px;
@@ -206,7 +254,7 @@ transition: 0.5s;
     padding-top: 100px;
 }
 .controls .fir,.sec{
-  margin-left: 95px;
+    margin-left: 95px;
 }
 .controls .third,.fourth{
   margin-left: 75px;
@@ -221,7 +269,7 @@ transition: 0.5s;
     max-width: 100%;
     padding: 10px 50px;
     
-
+    
 }
 .skill-container {
     position: relative;
@@ -257,7 +305,7 @@ transition: 0.5s;
         green 0%,
         green var(--percentage, 0%),
         lightgray var(--percentage, 0%)
-    );
+        );
     background-origin: border-box;
     background-clip: border-box;
     opacity: 0;
@@ -299,11 +347,11 @@ transition: 0.5s;
 .main .Contacts{
     width: 100%;
     height: 90vh;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     display: flex;
 }
 .Contacts .left{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -315,26 +363,29 @@ transition: 0.5s;
     margin-bottom: 30px;
 }
 .Contacts .left p{
-    font-size: 20px;
+    font-size: 25px;
 }
 .Contacts .right{
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     display: inline-block;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 100px;
 }
 .Contacts .right input{
-    width: 80%;
+    width: 75%;
     border: none;
     outline: none;
     border-bottom: 2px solid black;
     margin-top: 50px;
-    padding: 20px 10px;
+    padding: 20px 1px;
+    font-size: 20px;
+    
 }
 .Contacts .right input::placeholder{
     color: rebeccapurple;
-      font-size: 18px;
+    font-size: 18px;
 }
 .Contacts .right .contact-form button{
     border: none;
@@ -344,7 +395,8 @@ transition: 0.5s;
     margin-left: 50%; 
     font-size: 25px;
     cursor: pointer;
-
+    background-color: #fff;
+    
 }
 
 /* .Contacts .right h4{
@@ -358,11 +410,43 @@ transition: 0.5s;
 
 
 
+/* //Footer CSS */
+.footer{
+    height: 20vh;
+    width: 100%;
+    border: 2px solid green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+}
 
+.footer .right{
+   display: flex;
+   justify-content: end;
 
-
-
-
+    
+}
+.footer .right span{
+    height: 45px;
+    width: 45px;
+    border-radius:50% ;
+    border: 2px solid black;
+    place-items: center;
+    display: grid;
+    margin-right: 20px;
+}
+.footer .right span i{
+ 
+    font-size: 25px;
+    place-items: center;
+}
+.navbar .open{
+    font-size: 25px;
+}
+ .close{
+    font-size: 30px;
+}
 
 
 @media screen and (min-width: 700px) {
@@ -380,6 +464,47 @@ transition: 0.5s;
  }
  
  @media screen and (max-width: 700px) {
+
+    .main .Contacts{
+        display: flex;
+        flex-direction: column;
+        height: 95vh;
+        width: 100%;
+    }
+    .main .Contacts .left{
+        width: 100%;
+        height: 30%;
+        padding: 0px 50px;;
+       
+    }
+    .main .Contacts .left h2{
+    
+       margin-left: 70px;
+      
+    }
+   
+    .main .Contacts .right{
+        width: 100%;
+        height: 500px;
+        /* padding-right: 10px; */
+        padding-left: 53px;
+
+        
+    }
+    .main .Contacts .right input{
+        width: 80%;
+        padding-right: 100px;
+       
+    }
+    .main .Contacts .right button{
+        margin-right: 40px;
+    }
+  
+    .footer{
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+    }
     .skills{
         border: 2px solid black;
         display: grid;
@@ -492,7 +617,8 @@ transition: 0.5s;
    display: flex;
    justify-content: center;
    margin-left: 20px;
-   margin-top: 5px;
+   margin-top: 30px;
+   margin-bottom: 20px;
     
    }
    .main .HomePage .left{
@@ -512,7 +638,8 @@ transition: 0.5s;
     margin-bottom: 50px;
    }
    .main .HomePage .left .btns{
-    margin-left: 15px;
+    margin-left: 10px;
+    margin-top: 1px;
    }
    .main .HomePage .left .btns span{
     /* border: 2px solid green; */
@@ -523,6 +650,41 @@ transition: 0.5s;
      
  }
  @media  (min-width: 700px) and (max-width:1250px) {
+    .main .Contacts{
+        display: flex;
+        /* flex-direction: column; */
+        height: 95vh;
+        width: 100%;
+    }
+    .main .Contacts .left{
+        width: 100%;
+        height: 30%;
+        padding: 0px 50px;
+       margin-top: 10%;
+    }
+    .main .Contacts .left h2{
+    
+       margin-left: 70px;
+      
+    }
+   
+    .main .Contacts .right{
+        width: 100%;
+        height: 500px;
+        /* padding-right: 10px; */
+        padding-left: 53px;
+
+        
+    }
+    .main .Contacts .right input{
+        width: 80%;
+        padding-right: 100px;
+       
+    }
+    .main .Contacts .right button{
+        margin-right: 40px;
+    }
+  
     .skills{
         border: 2px solid black;
         display: grid;
@@ -588,13 +750,13 @@ transition: 0.5s;
     .main .HomePage .left .btns {
         margin-left: 13px;
     }
-    .main .HomePage .left .btns span{
+    /* .main .HomePage .left .btns span{
         padding: 0;
         
     }
     .main .HomePage .left .btns span i{
         font-size: 20px;
-    }
+    } */
     .main .HomePage .left .btns button{
         padding: 10px ;
     }
@@ -644,16 +806,16 @@ transition: 0.5s;
     .main .HomePage  .left h1{
         font-size: 30px;
     }
-    .main .HomePage  .left .btns {
+    /* .main .HomePage  .left .btns {
         margin-left: 10px;
-    }
+    } */
     .main .HomePage .right{
         width: 50%;
     
     }
-    .main .HomePage .left .btns span i{
+    /* .main .HomePage .left .btns span i{
         font-size: 15px;
-    }
+    } */
     .main .HomePage .left p{
         padding: 10px 20px;
     }

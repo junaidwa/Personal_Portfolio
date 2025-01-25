@@ -23,19 +23,42 @@ document.querySelector('.Progressbar').addEventListener('click', function() {
         behavior: 'smooth' // Enables smooth scrolling
     });
 });
-let ATScroolPrgress=()=>{
-    let ProgressDIV= document.querySelector('.Progressbar');
-    let ProgessSpan= document.querySelector('.ProgressCircle');
+// let ATScroolPrgress=()=>{
+//     let ProgressDIV= document.querySelector('.Progressbar');
+//     let ProgessSpan= document.querySelector('.ProgressCircle');
+//     let pos = document.documentElement.scrollTop;
+//     let CalHeight= document.documentElement.scrollHeight- document.documentElement.clientHeight;
+//     let ScrollValue= Math.round(pos*100/CalHeight);
+//     ProgressDIV.style.background=`conic-gradient( #c0c0ff ${ScrollValue}%rgb(22, 22, 110) ${ScrollValue}%)`;
+//     ProgessSpan.textContent=`${ScrollValue}%`
+
+// }
+// window.onscroll=ATScroolPrgress;
+// window.onload=ATScroolPrgress;
+
+
+
+let ATScrollProgress = () => {
+    let ProgressSpan = document.querySelector('.ProgressCircle');
     let pos = document.documentElement.scrollTop;
-    let CalHeight= document.documentElement.scrollHeight- document.documentElement.clientHeight;
-    let ScrollValue= Math.round(pos*100/CalHeight);
-    ProgressDIV.style.background=`conic-gradient( #c0c0ff ${ScrollValue}%rgb(22, 22, 110) ${ScrollValue}%)`;
-    ProgessSpan.textContent=`${ScrollValue}%`
+    let CalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let ScrollValue = Math.round((pos * 100) / CalHeight);
 
-}
-window.onscroll=ATScroolPrgress;
-window.onload=ATScroolPrgress;
+    // Update the border gradient to reflect scrolling
+    ProgressSpan.style.setProperty(
+        '--progress-gradient',
+        `conic-gradient(red ${ScrollValue}%, gray ${ScrollValue}%)`
+    );
 
+    // Update the text content with the percentage
+    ProgressSpan.textContent = ScrollValue === 100 ? "↑" : `${ScrollValue}%`;
+
+    // Dynamically set the border (through the ::before pseudo-element)
+    ProgressSpan.style.background = `conic-gradient(red ${ScrollValue}%, gray ${ScrollValue}%)`;
+};
+
+window.onscroll = ATScrollProgress;
+window.onload = ATScrollProgress;
 
 
 let counters = document.querySelectorAll(".controls span");
